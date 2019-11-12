@@ -42,7 +42,7 @@ For both Ensemble and MC-Dropout models the **prediction mean** is used as the f
 
 ## References
 - [1] 2016, Wang et al.: A benchmark for comparison of dental radiography analysis algorithms
-- [2] 2015, Ronneberger, O.; Fischer, P.; Brox, T.: U-Net: Convolutional Networks forBiomedical Image Segmentation
+- [2] 2015, Ronneberger, O.; Fischer, P.; Brox, T.: U-Net: Convolutional Networks for Biomedical Image Segmentation
 - [3] 2017, Lakshminarayanan et al.: Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles
 - [4] 2016, Gal, Y.; Ghahramani, Z.: Dropout As a Bayesian Approximation 
 
