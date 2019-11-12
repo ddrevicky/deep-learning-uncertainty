@@ -1,6 +1,8 @@
 # Deep Learning Model Uncertainty in Medical Image Analysis
 
-This repository contains the code for my Master's Thesis [(full text)](https://www.vutbr.cz/www_base/zav_prace_soubor_verejne.php?file_id=198231) which deals with augmenting deep learning models with the ability to provide uncertainty estimates along with their predictions. We evaluate several uncertainty measures on a landmark localization task using a dataset of X-ray cephalograms.
+This repository contains the code for my Master's Thesis [(full text)](https://www.vutbr.cz/www_base/zav_prace_soubor_verejne.php?file_id=198231) which deals with augmenting deep learning models with the ability to provide uncertainty estimates along with their predictions. We evaluate several uncertainty measures on a landmark localization task using a dataset of X-ray cephalograms. A short summary of the work follows, please see the full text if you'd like more details.
+
+![](https://github.com/ddrevicky/deep-learning-uncertainty/blob/master/images/predictions_and_estimates.png)
 
 ## Motivation
 **Deep convolutional neural networks (CNNs)** achieve super-human results in image analysis but their outputs lack reliable information about the uncertainty of their predictions which prevents their wide-spread adaptation in medicine.
@@ -13,6 +15,8 @@ In this work we:
 - CNN was trained on a dataset [1] of 200 X-ray cephalograms (annotated with 19 landmark positions). 
 - Training done via **heatmap regression** (annotated landmark location is used to create a 2D heatmap with a Gaussian spike at that location).
 
+![](https://github.com/ddrevicky/deep-learning-uncertainty/blob/master/images/landmark_solution.png)
+
 ## Solution: Uncertainty Measures
 We proposed three models with corresponding uncertainty measures:
 
@@ -22,15 +26,19 @@ We proposed three models with corresponding uncertainty measures:
 
 For both Ensemble and MC-Dropout models the **prediction mean** is used as the final predicted landmark position and the **prediction variance** (of the ensemble members and Monte Carlo samples respectively) as the uncertainty measure. We assume that as variance increases so does the models’ uncertainty.
 
-## Experiment 1: Can Uncertainty Measures Detect Skull Rotation?
+![](https://github.com/ddrevicky/deep-learning-uncertainty/blob/master/images/models.png)
 
+## Experiment 1: Can Uncertainty Measures Detect Skull Rotation?
+![](https://github.com/ddrevicky/deep-learning-uncertainty/blob/master/images/correlation_skull_rotation.png)
+![](https://github.com/ddrevicky/deep-learning-uncertainty/blob/master/images/skull_rotation.png)
 
 ## Experiment 2: Can Uncertainty Measures Detect Deformed Data?
-- Models achieve performance close to state-of-the-art on the studied landmark localization task.
-- Uncertainty measures were able to reliably detect data unsuitable for automatic evaluation.
+![](https://github.com/ddrevicky/deep-learning-uncertainty/blob/master/images/correlation_distorted.png)
+![](https://github.com/ddrevicky/deep-learning-uncertainty/blob/master/images/elastic_distortion.png)
 
 ## Conclusion
-
+- Models achieve performance close to state-of-the-art on the studied landmark localization task.
+- Uncertainty measures were able to reliably detect data unsuitable for automatic evaluation.
 
 ## References
 - [1] 2016, Wang et al.: A benchmark for comparison of dental radiography analysis algorithms
